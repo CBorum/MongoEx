@@ -1,0 +1,90 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <div id="app">
+        <div class="section">
+            <h2>All jokes</h2>
+            <ul>
+                <li v-for="joke in allJokes">
+                    ${joke.joke} (ID: ${joke._id})
+                </li>
+            </ul>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>Random joke</h2>
+            <p>${randomJoke.joke}</p>
+            <button class="waves-effect waves-light btn" @click="getRandomJoke()">New random</button>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>Joke by id</h2>
+            <div class="input-field">
+                <input id="getById" type="text" @keyup.enter="getJokeById()" v-model="toGetId">
+                <label for="getById">ObjectID</label>
+            </div>
+            <p>${jokeById.joke}</p>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>New joke</h2>
+            <div class="input-field">
+                <input type="text" id="newJokeJoke" v-model="newJoke.joke">
+                <label for="newJokeJoke">Joke</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="newJokeTypes" v-model="newJoke.type">
+                <label for="newJokeTypes">Types</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="" v-model="newJoke.reference.author">
+                <label for="newJokeTypes">Author</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="" v-model="newJoke.reference.link">
+                <label for="newJokeTypes">Link</label>
+            </div>
+            <button class="waves-effect waves-light btn" @click="postJoke()">Post joke</button>
+            <p>${newJokeStatus}</p>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>Edit joke</h2>
+            <div class="input-field">
+                <input type="text" id="newJokeId" v-model="editJoke._id">
+                <label for="newJokeId">Joke</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="newJokeJoke" v-model="editJoke.joke">
+                <label for="newJokeJoke">Joke</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="newJokeTypes" v-model="editJoke.type">
+                <label for="newJokeTypes">Types</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="" v-model="editJoke.reference.author">
+                <label for="newJokeTypes">Author</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="" v-model="editJoke.reference.link">
+                <label for="newJokeTypes">Link</label>
+            </div>
+            <button class="waves-effect waves-light btn" @click="editJoke()">Edit joke</button>
+            <p>${editJokeStatus}</p>
+        </div>
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>Delete joke</h2>
+            <div class="input-field">
+                <input id="deleteById" type="text" @keyup.enter="deleteJoke()" v-model="toDeleteId">
+                <label for="deleteById">ObjectID</label>
+            </div>
+            <p>${toDeleteStatus}</p>
+        </div>
+    </div>
+</div>

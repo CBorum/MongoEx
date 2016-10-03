@@ -1,0 +1,22 @@
+{
+  "name": "mongo_ex",
+  "description": "",
+  "main": "",
+  "authors": [
+    "CBorum <christopherborum@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue-resource": "^1.0.2",
+    "vue": "^1.0.26"
+  }
+}
